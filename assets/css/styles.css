@@ -8,7 +8,7 @@
   --first-color-lighter: #ECF3F2;
   --title-color: #11443F;
   --text-color: #5B7B78;
-  --body-color: #F5FFFE;
+  --body-color: #000000;
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --biggest-font-size: 3rem;
@@ -24,7 +24,7 @@
 
 @media screen and (min-width: 1024px) {
   :root {
-    --biggest-font-size: 5.5rem;
+    --biggest-font-size: 3.5rem;
     --big-font-size: 2rem;
     --normal-font-size: 1rem;
   }
@@ -105,8 +105,22 @@ img {
     transition: .4s;
   }
 }
+.nav_logo {
+  width: 60px; /* Ajusta el tamaño del logo */
+  height: auto; /* Mantiene la proporción del logo */
+  margin-right: 20px; /* Espacio a la derecha del logo */
+  display: inline-block; /* Asegura que el logo se alinee correctamente con otros elementos */
+  vertical-align: middle; /* Alinea verticalmente el logo con el texto */
+}
 
-.nav__logo, .nav__toggle {
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+  .nav_logo {
+    width: 50px; /* Ajusta el tamaño del logo para móviles */
+    margin-right: 10px; /* Espacio a la derecha del logo en móviles */
+  }
+}
+.nav__toggle {
   color: var(--body-color);
 }
 
@@ -114,7 +128,10 @@ img {
   color: var(--first-color-dark);
   font-weight: var(--font-medium);
 }
-
+.nav__link:hover {
+  color: white; /* Color del texto al hacer hover */
+  border-bottom: 4px solid #326ede;
+}
 .nav__item {
   margin-bottom: 1.5rem;
 }
@@ -148,7 +165,8 @@ img {
 .islands__container {
   position: relative;
   height: 100%;
-  display: grid;
+  font-weight: bold;
+  
   grid-template-columns: 2fr .25fr;
   align-content: center;
 }
@@ -174,14 +192,14 @@ img {
   display: inline-flex;
   align-items: center;
   padding: 1rem 1.5rem;
-  background-color: var(--body-color);
+  background-color: var(--first-color-lighter);
   color: var(--first-color);
   border-radius: .5rem;
   font-weight: var(--font-medium);
 }
 
 .islands__button:hover {
-  background-color: var(--first-color-lighter);
+  background-color: rgb(226, 241, 159);
 }
 
 .islands__button-icon {
@@ -199,7 +217,7 @@ img {
   left: 50%;
   transform: translateX(-50%);
   padding: .25rem .5rem;
-  background-color: var(--body-color);
+  background-color: var(--first-color-lighter);
   border-radius: .75rem;
   z-index: var(--z-tooltip);
   overflow: hidden;
